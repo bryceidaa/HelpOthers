@@ -1,0 +1,288 @@
+<!doctype html>
+
+<head>
+
+<!-- This code is uses the jquery library. Everything with the $
+means that it is using stuff from jquery.-->
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+
+// This is the code controlling which table
+// appears based on what the user selects
+    function makePopup(){
+      var $widget = $('<div>');
+      $widget.append($('<div>').text('Prices of college'));
+      var ageGroup = $('input[name=age-group]:checked').val();
+
+      if(ageGroup == 'student'){
+        $('body').append($('#college-price-table').clone().show());
+      } else if (ageGroup =='adult'){
+          $('body').append($('#healthcare-table').clone().show());
+        } else if (ageGroup=='elder'){
+          $('body').append($('#retirement-table').clone().show())
+          }
+    }
+  </script>
+</head>
+
+
+<body>
+<!--This section informs the viewer what the purpose of <thead>
+  survey is-->
+</thead>
+  <div id="Survey"><h1> Survey </h1></div>
+
+    <style>
+    #description-paragraph  {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 0px;
+      }
+
+    #Description {
+      margin-bottom: 0px;
+    }
+
+    #Survey {
+      width: 100%;
+      height: 50px;
+      background-image: linear-gradient(blue,white,red);
+    }
+
+    body {
+      font-family:"Helevetica";
+    }
+
+    </style>
+      <h3 id ="Description">
+        <strong> Description:</strong>
+        </h3>
+
+      <br> <p id="description-paragraph">Fill out the survey and the
+        results will show how current events in the US may affect you.
+        After the survey you will be directed to resources that will help
+        you become more informed as they are fact checked articles that
+        come from all sides of the political spectrum: left, middle, right.
+        If a source shows strong views of a certain political opinion but
+        is not very credible in terms of using factual information, it
+        will be indicated. </br><p>
+
+
+
+ <!-- This is the code for the multiple choice button choices-->
+   <h4> <strong> <div class="agequestion"> Which age group do you
+      identify with the most? </div> </strong> </h4>
+
+       <form class = "agequestion">
+          <input type = "radio" name = "age-group" value = "student"
+           checked> student <br>
+
+          <input type = "radio" name = "age-group" value = "adult">
+          adult <br>
+
+          <input type = "radio" name = "age-group" value = "elder">
+          elder <br>
+       </form>
+
+<!-- This is the code for making the submit button work. Remember,
+the variable for this is makePopup in the code and submit in
+the website. -->
+    <button type = "button" onclick = "makePopup()"> Submit! </button>
+
+
+
+<!-- PURELY REFERENCE FOR COLOR SCHEMES
+    LEFT: LIGHT BLUE 66B2FF
+    MIDDLE: LIGHT GREY E0E0E0
+    RIGHT: LIGHT RED FF6666 -->
+
+
+<!-- This is the table for student answer for age group
+college prices table-->
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+       <table id="college-price-table" cellpadding="5" style="width:100%; display:none;">
+         <col width = "33%">
+         <col width = "33%">
+         <col width = "33%">
+
+         <tr>
+           <th colspan="3">College Prices Political Spectrum</th>
+         </tr>
+
+        <tr align="center">
+          <th bgcolor="#0000FF"><font color="white">Left POV</font></th>
+          <th bgcolor="#808080"><font color="white">Middle POV</font></th>
+          <th bgcolor="#FF0000"><font color="white">Right POV</font></th>
+        </tr>
+
+        <tr align="center">
+          <td bgcolor="#66B2FF"> <a href="https://www.newyorker.com/magazine/2012/05/28/the-cost-of-college">
+          The New Yorker: The Cost of College</a></th>
+          <td bgcolor="#E0E0E0"> <a href="https://www.npr.org/2014/03/18/290868013/how-the-cost-of-college-went-from-affordable-to-sky-high">
+          NPR:How the Cost of College Went From Affordable to Sky-High</a></th>
+          <td bgcolor="#FF6666"><a href="https://insider.foxnews.com/2018/04/26/tucker-carlson-college-worth-it-costs-rising-courses-getting-easier">
+          Fox: More Students Are Failing, Yet Almost Nobody Fails</a></th>
+        </tr>
+
+        <tr>
+          <td bgcolor="#66B2FF">“This graduation season, the national conversation seems to be going
+              into apocalypse mode about the cost of higher education. Tuition has
+              been rising faster than the inflation rate for years, even through the
+              Great Recession. State governments are cutting funding, and thus
+              pushing more students into the loan market. Student-loan debt
+              is also rapidly rising. Hundreds of thousands of students start
+              college every year, but only about three-fifths get a degree.”</td>
+          <td bgcolor="#E0E0E0">“As family income fell, borrowing to pay for college took off,
+              while public investment in higher education dropped. Sandy Baum
+              of the Urban Institute says that drop has been the single biggest
+              reason for the increase in college costs.”</td>
+          <td bgcolor="#FF6666">‘"More students are failing, yet almost nobody fails. ... Colleges
+              barely teach, yet every year they increase their fees. Try that in
+              a private business, you might get indicted for fraud. Do it at an
+              American university and you get billions in taxpayer subsidies,"
+              he [Tucker] argued.’ <br><strong>**While Fox News is a right-leaning source
+              according to most fact checkers it is very biased and is often
+              inaccurate.</strong></br></td>
+        </tr>
+
+        <tr>
+          <td colspan="3"><strong>Why This is Important to you:</strong>
+            Paying for college will affect you both before
+            and after. College expenses might factor into your
+            decision to attend a certain college, and college
+            loans might follow you even after college </td>
+        </tr>
+
+      </table>
+
+
+<!-- This is the table for adult answer for
+age group healthcare table-->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+     <table id="healthcare-table" cellpadding="5" style="width:100%; display:none;">
+       <col width = "33%">
+       <col width = "33%">
+       <col width = "33%">
+
+       <tr>
+         <th colspan="3">Healthcare Political Spectrum</th>
+       </tr>
+
+       <tr align="center">
+         <th bgcolor="#0000FF"><font color="white">Left POV</font></th>
+         <th bgcolor="#808080"><font color="white">Middle POV</font></th>
+         <th bgcolor="#FF0000"><font color="white">Right POV</font></th>
+       </tr>
+
+       <tr align="center">
+         <td bgcolor="#66B2FF"> <a href="https://www.buzzfeednews.com/article/venessawong/health-care-costs-rise-2018">
+           Buzzfeed: Here's What Helath Care Costs in 2018. It's Not Pretty.</a></th>
+         <td bgcolor="#E0E0E0"> <a href="https://www.apnews.com/90627aa6d17d4df6a2b3f2982f1fc194">
+           AP: Democrats Lay Out Health Care Plans in Televised Debate</a></th>
+         <td bgcolor="#FF6666"><a href="https://www.nationalreview.com/2018/10/the-gop-is-making-health-care-great-again/">
+           National Review: The GOP Is Making Health Care Great Again</a></th>
+       </tr>
+
+       <tr>
+         <td bgcolor="#66B2FF">“For some people, it’s definitely a crisis,
+           because it’s unaffordable. For some companies, it can be a
+           crisis too." PWC expects employer medical costs to rise another
+            6% in 2019”</td>
+         <td bgcolor="#E0E0E0">“The Democrats are running for seat held by
+           Republican U.S. Andy Barr, who has advocated for repealing most
+           of Barack Obama’s legacy, including the health care law that added
+            half a million people to Kentucky’s insurance rolls while increasing
+            costs for taxpayers”</td>
+         <td bgcolor="#FF6666">"The total number of Americans with health
+           insurance rose from 292.3 million in 2016 to 294.6 million in 2017,
+           the Census Bureau reports… These plans are cheaper because they lack
+           many of Obamacare’s costly, needless, and foolish mandates."</td>
+       </tr>
+
+       <tr>
+         <td colspan="3"><strong>Why This is Important to you:</strong>
+           Having health care drastically changes how much acces you have
+           to medical care and insurance in the times of accidents.
+           Being aware of how much you are covered by healthcare in addition
+           to how the government addresses the topic is very important. </td>
+       </tr>
+    </table>
+
+
+
+<!-- This is the table for elder answer for age group retirement table-->
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+    <table id="retirement-table" cellpadding="5" style="width:100%; display:none;">
+      <col width = "33%">
+      <col width = "33%">
+      <col width = "33%">
+
+      <tr>
+       <th colspan="3">Retirement + Tech Political Spectrum</th>
+      </tr>
+
+      <tr align="center">
+        <th bgcolor="#0000FF"><font color="white">Left POV</font></th>
+        <th bgcolor="#808080"><font color="white">Middle POV</font></th>
+        <th bgcolor="#FF0000"><font color="white">Right POV</font></th>
+      </tr>
+
+      <tr align="center">
+        <td bgcolor="#66B2FF"> <a href="https://www.vox.com/2018/8/1/17561014/immigration-social-security">
+          Vox: Why Baby Boomers Need Immigrants To Fund Their Retirement, In 2 Charts</a></th>
+        <td bgcolor="#E0E0E0"> <a href="https://www.bbc.com/news/technology-32511489">
+          BBC:The generation that tech forgot</a></th>
+        <td bgcolor="#FF6666"><a href="https://www.weeklystandard.com/the-editors/medicare-will-be-bankrupt-in-8-years-why-dont-republicans-care">
+          The Weekly Standard(Editorial): Who Cares About Entitlements?</a></th>
+      </tr>
+
+      <tr>
+        <td bgcolor="#66B2FF">“The Social Security system is in trouble.
+          It’s not just a future problem; America’s retirement insurance
+          program is in trouble now...though it’s one that the Trump
+          administration probably doesn’t want to hear. Economic estimates
+          show that immigration would help save the Social Security system.
+          Not just legal immigration — illegal immigration too.”</td>
+        <td bgcolor="#E0E0E0">“These days there is no shortage of technology
+           designed for the older generation -hearing aids that use GPS data
+           to work out where the wearer is located and adjust volume
+           accordingly...But do older people want any of this when many have
+            not got to grips with the more basic technology most of the younger
+            generation take for granted?”</td>
+        <td bgcolor="#FF6666">"Meanwhile the cost of the programs keeps rising
+           … they all get axed or deleted in order to keep paying for retirement
+            benefits and health insurance for the elderly."</td>
+      </tr>
+
+      <tr>
+        <td colspan="3"><strong>Why This is Important to you:</strong>
+          Having social security and a retirement is important. Many people
+          don’t want to work forever! Knowing how your age or government
+          policies impact your retirement plan is important. Better
+          to be in the know then be surprised at a change. Also,
+          the 21st century brings a new wave of technology that can be
+           useful to know how to use. </td>
+      </tr>
+    </table>
+
+<style>
+
+</style>
+
+
+</body>
